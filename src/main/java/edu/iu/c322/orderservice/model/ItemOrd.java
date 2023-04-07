@@ -6,27 +6,16 @@ import jakarta.validation.constraints.NotEmpty;
 import java.util.Objects;
 
 @Entity
-@Table(name = "item")
 public class ItemOrd {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "item_id")
     private int itemId;
-
     @NotEmpty(message = "Name cannot be empty.")
-    @Column(name = "name")
     private String name;
-
-    @Column(name = "quantity")
     private int quantity;
 
-    @Column(name = "price")
     private double price;
-
-    @Column(name = "returned")
     private boolean returned;
-
-    @Column(name = "reason")
     private String reason;
 
     public int getItemId() {

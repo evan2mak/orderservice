@@ -7,16 +7,11 @@ import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "orders")
 public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "order_id")
     private int orderId;
-
-    @Column(name = "customer_id")
     private int customerId;
-    @Column(name = "total")
     private double total;
 
     @ManyToOne(cascade = CascadeType.ALL)
