@@ -7,6 +7,9 @@ import java.util.Objects;
 
 @Entity
 public class ItemOrd {
+    // Need an order object
+    // Need to use join colum to join the order 'JoinColumn(name = "order_id")'
+    // This creates a column order_id that links the order id to the id of the order
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int itemId;

@@ -17,7 +17,7 @@ public class Orders {
     @OneToOne(cascade = CascadeType.ALL)
     @Valid
     private ShippingAddress shippingAddress;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL) // Try 'mapped by' later on to map order item to "order" table
     @Valid
     private List<ItemOrd> items;
     @OneToOne(cascade = CascadeType.ALL)
