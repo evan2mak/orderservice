@@ -16,12 +16,14 @@ public class Orders {
 
     @OneToOne(cascade = CascadeType.ALL)
     @Valid
+    // @JoinColumn(name = 'address_id') this creates a join column, connects the ids
     private ShippingAddress shippingAddress;
     @OneToMany(cascade = CascadeType.ALL) // Try 'mapped by' later on to map order item to "order" table
     @Valid
     private List<ItemOrd> items;
     @OneToOne(cascade = CascadeType.ALL)
     @Valid
+    // @JoinColumn(name = 'payment_id') this creates a join column, connects the ids
     private Payment payment;
     private String cancelOrder;
     public int getCustomerId() {
