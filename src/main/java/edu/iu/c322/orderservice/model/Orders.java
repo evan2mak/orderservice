@@ -14,13 +14,13 @@ public class Orders {
     private int customerId;
     private double total;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @Valid
     private ShippingAddress shippingAddress;
     @OneToMany(cascade = CascadeType.ALL)
     @Valid
     private List<ItemOrd> items;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     @Valid
     private Payment payment;
     private String cancelOrder;
