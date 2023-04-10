@@ -17,6 +17,8 @@ public class ItemOrd {
     private double price;
     private boolean returned;
     private String reason;
+    private String trackingStatus;
+    private String date;
 
     public int getItemId() {
         return itemId;
@@ -63,6 +65,22 @@ public class ItemOrd {
 
     public void setReason(String reason) {
         this.reason = reason;
+    }
+
+    public String getTrackingStatus() {
+        return trackingStatus;
+    }
+
+    public void setTrackingStatus(String trackingStatus) {
+        this.trackingStatus = trackingStatus;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 
     @Override

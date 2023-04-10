@@ -23,7 +23,7 @@ public class Orders {
     @ManyToOne(cascade = CascadeType.ALL)
     @Valid
     private Payment payment;
-
+    private String cancelOrder;
     public int getCustomerId() {
         return customerId;
     }
@@ -64,6 +64,14 @@ public class Orders {
     }
     public void setPayment(Payment payment) {
         this.payment = payment;
+    }
+
+    public String getCancelOrder() {
+        return cancelOrder;
+    }
+
+    public void setCancelOrder(String cancelOrder) {
+        this.cancelOrder = cancelOrder;
     }
 
     @Override

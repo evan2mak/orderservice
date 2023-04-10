@@ -3,6 +3,7 @@ package edu.iu.c322.orderservice.controller;
 import java.util.List;
 import java.util.Optional;
 
+import edu.iu.c322.orderservice.model.DeleteRequest;
 import edu.iu.c322.orderservice.model.ItemOrd;
 import edu.iu.c322.orderservice.model.Orders;
 import edu.iu.c322.orderservice.model.UpdateRequest;
@@ -60,6 +61,20 @@ public class OrderController {
             if (!itemFound) {
                 throw new IllegalStateException("Item ID is not valid.");
             }
+            repository.save(order);
+        }
+        else {
+            throw new IllegalStateException("Order ID is not valid.");
+        }
+    }
+
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PutMapping("/{orderId}")
+    public void delete(@Valid @RequestBody DeleteRequest request) {
+        Optional<Orders> optionalOrder = repository.findById(request.getOrderId());
+        if (optionalOrder.isPresent()) {
+            Orders order = optionalOrder.get();
+            order.setCancelOrder(request.getCancelOrder());
             repository.save(order);
         }
         else {
