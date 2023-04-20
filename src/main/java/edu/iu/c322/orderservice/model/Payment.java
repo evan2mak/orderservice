@@ -22,6 +22,7 @@ public class Payment {
     private String number;
 
     @OneToOne(cascade = CascadeType.ALL)
+    // Do the join column portion here
     private BillingAddress billingAddress;
 
     public String getMethod() {
