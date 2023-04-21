@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${host}:${port}/${name}
+    username: ${username}
+    password: ${password}
+    name: order-service
+
+  sql:
+    init:
+      mode: always
