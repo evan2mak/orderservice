@@ -15,7 +15,7 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/orders")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://orderservice-frontend.vercel.app/")
 public class OrderController {
 
     private OrderRepository repository;
